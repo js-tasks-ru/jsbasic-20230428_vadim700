@@ -2,7 +2,7 @@ function sumSalary(salaries) {
   let result = 0;
 
   for (const [key, value] of Object.entries(salaries)) {
-    if (typeof value === 'number' && !isNaN(value) && isFinite(value) && isFinite(-value)) {
+    if (typeof value === 'number' && !isNaN(value) && isFinite(value)) {
       result += value;
     }
   }
