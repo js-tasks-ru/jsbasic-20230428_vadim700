@@ -1,3 +1,5 @@
 function namify(users) {
-  // ваш код...
+  return users.
+    filter(user => Boolean(user)).
+    map(user => user.name);
 }
