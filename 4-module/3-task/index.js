@@ -15,11 +15,11 @@ function highlight(table) {
 
     if (tableRow.cells[2].textContent === 'm') {
       tableRow.classList.add('male');
-    } else if (tableRow.children[2].textContent === 'f') {
+    } else if (tableRow.cells[2].textContent === 'f') {
       tableRow.classList.add('female');
     };
 
-    if (Number(tableRow.children[1].textContent) < 18) {
+    if (Number(tableRow.cells[1].textContent) < 18) {
       tableRow.style = "text-decoration: line-through";
     }
   }
