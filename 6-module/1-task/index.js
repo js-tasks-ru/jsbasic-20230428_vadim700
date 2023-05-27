@@ -41,10 +41,5 @@ export default class UserTable {
     );
   }
 
-  onCloseClick = (event) => {
-    const target = event.target;
-    const parent = target.parentNode.parentNode;
-
-    if (target.closest('button')) parent.remove();
-  }
+  onCloseClick = (event) => event.target.closest('tr').remove();
 }
