@@ -29,6 +29,7 @@
 .card__image {
   max-width: calc(100% - 100px);
   width: 100%;
+
 }
 
 .card__price {
