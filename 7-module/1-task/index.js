@@ -65,11 +65,6 @@ export default class RibbonMenu {
       this.elem.dispatchEvent(ribbonSelectEvent);
     }
 
-    if (target.closest('.ribbon__item')) {
-      this.slides.map(item => item.classList.remove('ribbon__item_active'));
-      target.classList.add('ribbon__item_active');
-    }
-
     if (target.closest('.ribbon__arrow_right')) { this.inner.scrollBy(350, 0); }
     if (target.closest('.ribbon__arrow_left')) { this.inner.scrollBy(-350, 0); }
   }
