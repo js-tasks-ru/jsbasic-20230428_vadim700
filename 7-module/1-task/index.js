@@ -53,10 +53,10 @@ export default class RibbonMenu {
 
     if (target.closest('.ribbon__item')) {
       event.preventDefault();
+      let index = this.slides.indexOf(target);
+
       this.slides.map(item => item.classList.remove('ribbon__item_active'));
       target.classList.add('ribbon__item_active');
-
-      let index = this.slides.indexOf(target);
 
       const ribbonSelectEvent = new CustomEvent('ribbon-select', {
         bubbles: true,
