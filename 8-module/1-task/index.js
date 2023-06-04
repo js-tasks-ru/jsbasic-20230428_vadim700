@@ -54,7 +54,6 @@ export default class CartIcon {
         right: '10px',
         left: leftIndent
       });
-      console.log(321)
     } else {
       Object.assign(cartElement.style, {
         position: '',
@@ -66,7 +65,7 @@ export default class CartIcon {
 
     if (document.documentElement.clientWidth <= 767) {
       Object.assign(this.elem.style, {
-        position: '',
+        position: 'fixed',
         top: '',
         left: '',
         zIndex: ''
