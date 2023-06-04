@@ -39,37 +39,38 @@ export default class CartIcon {
   }
 
   updatePosition() {
-    const cartElement = document.querySelector('.cart-icon');
-    const container = document.querySelector('.container');
-    let topCoord = this.elem.getBoundingClientRect().top + window.pageYOffset;
-    let leftIndent = Math.min(container.getBoundingClientRect().right + 20,
-      document.documentElement.clientWidth - this.elem.offsetWidth - 10
-    ) + 'px';
+    if (this.elem.clientWidth) {
+      const container = document.querySelector('.container');
+      let left = Math.min(container.getBoundingClientRect().right + 20,
+        document.documentElement.clientWidth - this.elem.offsetWidth - 10) + "px";
+      let initialTopCard = this.elem.getBoundingClientRect().top + window.pageYOffset;
 
-    if (window.pageYOffset > topCoord) {
-      Object.assign(cartElement.style, {
-        position: 'fixed',
-        top: '50px',
-        zIndex: 1e3,
-        right: '10px',
-        left: leftIndent
-      });
-    } else {
-      Object.assign(cartElement.style, {
-        position: '',
-        top: '',
-        left: '',
-        zIndex: ''
-      });
-    }
+      if (window.pageYOffset > initialTopCard) {
+        Object.assign(this.elem.style, {
+          position: 'fixed',
+          top: '50px',
+          zIndex: 1e3,
+          right: '10px',
+          left: left
+        });
+      }
+      if (window.pageYOffset < this.elem.clientHeight) {
+        Object.assign(this.elem.style, {
+          position: '',
+          top: '',
+          left: '',
+          zIndex: ''
+        });
+      }
 
-    if (document.documentElement.clientWidth <= 767) {
-      Object.assign(this.elem.style, {
-        position: 'fixed',
-        top: '',
-        left: '',
-        zIndex: ''
-      });
+      if (document.documentElement.clientWidth <= 767) {
+        Object.assign(this.elem.style, {
+          position: '',
+          top: '',
+          left: '',
+          zIndex: ''
+        });
+      }
     }
   }
 }
