@@ -47,7 +47,6 @@ export default class ProductGrid {
 
       collector.push(item);
     }
-    console.log(collector)
 
     this.inner.innerHTML = '';
 
